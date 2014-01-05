@@ -11,3 +11,7 @@ toplevel.init:
 	touch "$@"
 	echo "#use \"topfind\";;" >> "$@"
 	for p in $(PACKAGES); do echo "#require \"$$p\";;" >> "$@" ; done
+
+utop: toplevel.init compile
+utop:
+	utop $(addprefix -I ,_build $(wildcard _build/*)) -init "toplevel.init"

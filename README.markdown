@@ -10,3 +10,8 @@ To get started run
     make compile
 
 If everything worked you should have a runnable executable `_build/euler01`. This is of course not the interesting part; got read the blog post for more information.
+
+To play around with the code in the terminal (not Emacs) run `make utop` and try the following:
+
+    #load_rec "impl.cmo";;
+    Impl.compute ();;
