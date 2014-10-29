@@ -1,3 +1,13 @@
+(* Ensure that we're in the root of the project. This is helpful for
+   editor integration where the cwd might not be the root of the
+   project.*)
+let root =
+  let rec search path = match Sys.file_exists (path ^ "/.ocamlinit") with
+  | false -> search (Filename.dirname path)
+  | true -> path
+  in search (Sys.getcwd ())
+in Sys.chdir root;;
+
 #use "topfind";;
 #require "batteries";;
 #directory "_build";;
