@@ -10,4 +10,8 @@ in Sys.chdir root;;
 
 #use "topfind";;
 #require "batteries";;
+#require "core";;
+#require "async";;
+#require "cohttp";;
+#require "cohttp.async";;
 #directory "_build";;
